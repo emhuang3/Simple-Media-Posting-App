@@ -9,11 +9,11 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Student Information
 
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+|               |       Information      |
+|:-------------:|:----------------------:|
+| Student Name  | Emily Huang            |
+| Student ID    | 920499746              |
+| Student Email | ehuang10@mail.sfsu.edu |
 
 
 
