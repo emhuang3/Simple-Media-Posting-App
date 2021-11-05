@@ -40,8 +40,8 @@ body{
     font-size: 30px;
 }
 
-header{
-    width: 800px;
+#view-post-header{
+
     font-size: 40px;
     text-align: center;
     color: #ffffff;
@@ -51,48 +51,26 @@ header{
     
 }
 
-label{
+.post-image-label{
     color: #f5a021;
     background-color: #000A90;
     border-radius: 5px;
     border: 3px solid #000A90;
     margin: 2px;
     padding: 2px;
-    display: inline-block;
-
-    
+    display: inline-block; 
 
 }
 
-input{
-    background-color: #f5a021;;
-    border-radius: 5px;
-}
 
 
 #post-box{
-
-
-    padding: 10px;
+    margin: auto;
+    width: 950px;
+    padding: 0px 0px 10px 0px;
     border: 4px solid #000A90;
     box-shadow: 5px 10px #946B2D;
     text-align: center;
 }
 
-/* 
-button{
-    border-radius: 35px;
-    background-color: #000A90;
-    border: none;
-    color: #f5a021;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-button:hover{
-    color: #000A90;
-    background-color: #f5a021;
-    border-radius: 35px;
-} */
+

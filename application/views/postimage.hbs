@@ -8,14 +8,14 @@
     <link rel="stylesheet" type="text/css" href="/public/css/postimage.css">
 </head>
 <body>
-    <header class = "site-header">
-            Post an Image
-
-
-    </header>
+    
 
     <form>
         <div id = "post-image-container">
+            <header class = "post-image-header">
+            Post an Image
+            </header>
+
             <label>Pick a Title: </label>
             <br/>
             <input type = "text"/>
@@ -33,12 +33,16 @@
         
         <br/><br/>
 
-        <input type = "checkbox" />
-        <label>Confirm that you accept our <a href = "https://acceptableusepolicy.com">Acceptable Use Policy</a> for uploading images.</label>
-        <br/><br/>
+        <div id = "checkbox-button-container">
+            <input type = "checkbox" />
+            <label >Confirm that you accept our <a href = "https://acceptableusepolicy.com">Acceptable Use Policy</a> for uploading images.</label>
+            <br/><br/>
 
      
-        <button type = "Submit">Submit</button>
+            <button id = "post-image-button" type = "Submit">Submit</button>
+
+        </div>
+        
 
     </form>
 </body>

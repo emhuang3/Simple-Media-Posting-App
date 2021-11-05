@@ -1,8 +1,7 @@
 body{
-    margin: 0px 0px 0px 0px;
-
+    margin: 0;
     background-color: #3c44b8;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     
 }
 
@@ -41,7 +40,7 @@ body{
 }
 
 
-header{
+.post-image-header{
     font-size: 40px;
     text-align: center;
     color: #ffffff;
@@ -71,12 +70,17 @@ input{
 
 
 #post-image-container{
+    margin: auto;
+    width: 950px;
+    padding: 0px 0px 10px 0px;
     border: 4px solid #000A90;
     box-shadow: 5px 10px #946B2D;
+    
 }
 
 
-button{
+#post-image-button{
+   
     border-radius: 35px;
     background-color: #000A90;
     border: none;
@@ -91,4 +95,9 @@ button:hover{
     color: #000A90;
     background-color: #f5a021;
     border-radius: 35px;
+}
+
+#checkbox-button-container{
+    margin:auto;
+    width: 950px;
 }

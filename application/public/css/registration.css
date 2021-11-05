@@ -68,11 +68,9 @@ input{
 }
 
 .login-grid{
-
-    margin-left: 35%;
-    margin-top: 50px;
-    text-align: center;
+    
     float: left;
+    margin-left: 37%;
     
     display: grid;
     border: 4px solid #000A90;
@@ -162,7 +160,6 @@ button:hover{
 #username-input-failure{
    
     background-color: #f5a021;
-    margin-left: 70%;
     width: 250px;
     border-radius: 35px;
     padding: 15px;
@@ -173,8 +170,8 @@ button:hover{
 }
 
 #password-input-failure{
-    background-color: #f5a021;
-    margin-left: 70%;
+ 
+    background-color: #f5a021; 
     width: 250px;
     border-radius: 35px;
     text-align: center;
@@ -184,8 +181,15 @@ button:hover{
 }
 
 .checkbox{
-    margin-left: 540px;
+    
+    margin-left: 570px;
     position: absolute;
     bottom: 100px;
+    
+}
 
+#error{
+    padding: 0px 0px 0px 20px;
+    display: inline-block;
+   
 }

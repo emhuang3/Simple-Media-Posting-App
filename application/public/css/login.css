@@ -1,9 +1,7 @@
 body{
     margin: auto;
     padding: 0;
-
     background-color: #3c44b8;
-    
     
 }
 
@@ -52,7 +50,7 @@ header{
     
 }
 
-label{
+#login-label{
     color: #f5a021;
     background-color: #000A90;
     border-radius: 5px;
@@ -64,17 +62,19 @@ label{
 
 }
 
-input{
+#login-input{
     background-color: #f5a021;;
     border-radius: 5px;
 }
 
 .login-grid{
+    padding: 0px 0px 10px 0px;
+    width: 500px;
     text-align: center;
     border: 4px solid #000A90;
     box-shadow: 5px 10px #946B2D;
     display: grid;
-    margin: 80px auto auto auto;
+    margin: auto;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
@@ -152,4 +152,9 @@ button:hover{
     color: #000A90;
     background-color: #f5a021;
     border-radius: 35px;
+}
+
+#login-button{
+    width: 500px;
+    margin:auto;
 }
