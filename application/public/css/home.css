@@ -1,6 +1,6 @@
-
+/* 
 body{
-    text-align: center;
+   
     background-color: #3c44b8;
     margin: 0;
     padding: 0;
@@ -38,7 +38,7 @@ body{
     height: 100px;
     color:#f5a021;
     font-size: 30px;
-}
+} */
 
 
 #container{
@@ -51,6 +51,7 @@ body{
     margin: 4px;
     width: 80%;
     margin: auto;
+    padding-bottom: 50px;
 }
 
 div{
@@ -60,5 +61,9 @@ div{
     grid-template-rows: 2fr, 1fr;
     border-color: black;
     
+}
+
+h1{
+    text-align: center;
 }
 
