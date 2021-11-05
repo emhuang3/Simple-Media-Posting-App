@@ -1,13 +1,47 @@
 body{
-    margin: 80px 60px auto auto;
-    max-width: 950px;
     background-color: #3c44b8;
+    padding: 0;
+    margin: 0;
     
     
 }
 
+#nav-bar{
+    margin-bottom: 50px;
+    font-size: 20px;
+    line-height: 35px;
+    height: 40px;
+    text-align: center;
+    background:#f5a021;
+    color: white;
+}
 
+#footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    text-align: center;
+    background:#000A90;
+    width: 100%;
+    height: 30px;
+    color:#f5a021;
+   
+
+}
+
+
+#banner{
+    margin: 0px;
+    line-height: 100px;
+    text-align: center;
+    background:#000A90;
+    width: 100%;
+    height: 100px;
+    color:#f5a021;
+    font-size: 30px;
+}
 header{
+    
     font-size: 40px;
     text-align: center;
     color: #ffffff;
@@ -34,11 +68,9 @@ input{
 }
 
 .login-grid{
-    /*
-    
-    
-    margin: 80px auto auto auto;
-    */
+
+    margin-left: 35%;
+    margin-top: 50px;
     text-align: center;
     float: left;
     
@@ -128,31 +160,32 @@ button:hover{
 
 
 #username-input-failure{
+   
     background-color: #f5a021;
-    margin-left: 50%;
+    margin-left: 70%;
     width: 250px;
     border-radius: 35px;
     padding: 15px;
     text-align: center;
     visibility: hidden;
-   /*
-    visibility: hidden;
-   */ 
+   
 
 }
 
 #password-input-failure{
     background-color: #f5a021;
-    margin-left: 50%;
+    margin-left: 70%;
     width: 250px;
     border-radius: 35px;
     text-align: center;
     padding: 15px;
     visibility: hidden;
+   
 }
 
 .checkbox{
+    margin-left: 540px;
     position: absolute;
-    bottom: 200px;
+    bottom: 100px;
 
 }
