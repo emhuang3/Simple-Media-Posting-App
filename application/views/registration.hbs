@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/registration.css">
+    <script defer type = "text/javascript" src = "/public/js/registration.js"></script>
+</head>
+<body>
+    
+
+    <form id = "registration-form">
+        <div class = "login-grid">
+            <header class = site-header>Registration</header>
+         
+            <label class = "username" id = "username">Username: </label>
+            <input type = "text" class = "username-content" id = "username-content"/>
+     
+
+            <label class = "email">Email: </label>
+            <input type = "email" class = "email-content" required/>
+        
+
+            <label class = "password">Password: </label>
+            <input type = "password" class = "password-content" id = "password"/>
+          
+
+            <label class ="password2">Confirm Password: </label>
+            <input type = "password" class = "password2-content" id = "password-confirmation"/> 
+          
+
+        </div>
+        <div class = "error" id = "username-input-failure">
+            Username must begin with a alphabetic character.
+            Username must be 3 or more characters.
+        </div>
+        <br/>
+        <div class = "error" id = "password-input-failure">
+            Password must be 8 or more characters, contain 1 uppercase letter, 1 number, and 1 of the following 
+            characters: ( ) / * - + ! @ # $ & ^ .
+        </div>
+
+        <div class = "checkbox">
+            <br/> <br/>
+            <input type ="checkbox" required/>
+            <label>Confirm that you are 13+ years of age.</label>
+            <br/> <br/>
+
+            <input type = "checkbox" required/>
+            <label>Confirm that you agree to accept <a href = https://TOSPrivacy.com>TOS and Privacy Rules</a>.</label>
+
+            <br/> <br/>
+            <button type ="Submit" id = "submit">Submit</button>
+        </div>
+        
+
+    </form>
+    
+</body>
+</html>
