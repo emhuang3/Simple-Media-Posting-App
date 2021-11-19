@@ -7,24 +7,23 @@
 <body>
     
 
-    <form id = "registration-form">
+    <form id = "registration-form" method = "POST" action= "/users/register" enctype="application/x-www-form-urlencoded">
         <div class = "login-grid">
             <header class = site-header>Registration</header>
          
             <label class = "username" id = "username">Username: </label>
-            <input type = "text" class = "username-content" id = "username-content"/>
+            <input type = "text" class = "username-content" id = "username-content" name = "username" required/>
      
 
             <label class = "email">Email: </label>
-            <input type = "email" class = "email-content" required/>
-        
+            <input type = "email" class = "email-content" name = "email" required/>
 
             <label class = "password">Password: </label>
-            <input type = "password" class = "password-content" id = "password"/>
+            <input type = "password" class = "password-content" id = "password" name = "password" required/>
           
 
             <label class ="password2">Confirm Password: </label>
-            <input type = "password" class = "password2-content" id = "password-confirmation"/> 
+            <input type = "password" class = "password2-content" id = "password-confirmation" name = "password2" required/> 
           
 
         </div>

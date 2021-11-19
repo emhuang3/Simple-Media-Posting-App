@@ -8,7 +8,96 @@ const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
+//const db = require('./conf/database');
+
 const app = express();
+//const port = 3000;
+//const cors = require('cors');
+
+// app.use(cors());
+// app.use(express.json())
+
+// // app.get('/', (req,res)=>{
+// //   db.query('select 1+1', function(error, results, fields){
+// //     if(error){
+// //       res.json(error);
+// //     }
+// //     else{
+// //       res.json(results);
+// //     } 
+// //   });
+// // });
+
+// app.get('/', (req,res)=>{
+//   db.query('select 1+1')
+//   .then(([results, fields])=>{
+//     res.json(results)
+//   })
+//   .catch(err => res.json(err))
+// });
+
+// app.get('/users', (req, res)=>{
+//   db.query("select * from users")
+//   .then(([results, fields])=>{
+//     res.json(results)
+//   })
+//   .catch( err => res.json(err))
+// });
+
+// app.get('/posts', (req, res)=>{
+//   db.query("select * from posts")
+//   .then(([results, fields])=>{
+//     res.json(results)
+//   })
+//   .catch(err => res.json(err))
+// });
+
+// app.get("/posts/:id", (req, res)=>{
+//   let _id = req.params.id;
+//   db.query("select * from posts where id=?", [_id])
+//   .then(([results, fields])=>{
+//     res.json(results)
+//   })
+//   .catch(err => res.json(err))
+// });
+
+// app.post("/posts", async (req, res)=>{
+//   let {title, authorId} = req.body;
+//   try{
+//     let[results, fields] = await db.query("INSERT INTO posts (title, authorId) VALUES (?,?)", [title, authorId]);
+//     res.json(resulsts)
+//   } catch(error){
+//     res.json(error);
+//   }
+// });
+
+
+// app.listen(port, ()=>{
+//   console.log(`Listening on http://localhost:${port}...`);
+// })
+
+// // let baseSQL = `SELECT title, username
+// // FROM posts as p 
+// // JOIN  users as u
+// // ON p.authorId=u.id
+// // WHERE u.id=?;
+// // `
+
+// // db.query(
+// //   baseSQL,
+// //   [9],
+// //   // "INSERT INTO users (username, email, avatar, createdAt) VALUE (?,?,?,now())", 
+// //   // ["test1234", "test1234@mail.com", "noavatar"], 
+// //   function(err, results, fields){
+// //     if(err){
+// //         console.error(err);
+// //     }else{
+// //       console.log(results);
+// //       //results.forEach(row => console.log(row));
+// //       //console.log(fields);
+// //     }
+// //     db.end();
+// // });
 
 app.engine(
   "hbs",
