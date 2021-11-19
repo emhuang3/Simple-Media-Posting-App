@@ -6,15 +6,15 @@
     
 
     
-        <form>
+        <form method="POST" action="/users/login" enctype="application/x-www-form-urlencoded">
             <div class = "login-grid">
                 <header  class = "site-header">Login </header>
-
+ 
                 <label id = "login-label" class = "username">Username: </label>
-                <input type = "text" id = "login-input" class = "username-content"/>
+                <input type = "text" id = "login-input" class = "username-content" name = "username" required/>
            
                 <label id ="login-label" class = "password">Password: </label>
-                <input type = "password" id = "login-input"class = "password-content"/>
+                <input type = "password" id = "login-input"class = "password-content" name = "password" required/>
 
             
                 

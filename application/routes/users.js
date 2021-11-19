@@ -3,6 +3,7 @@ var router = express.Router();
 var db = require('../conf/database')
 const UserError = require("../helpers/error/UserError");
 const { requestPrint, errorPrint, successPrint} = require('../helpers/debug/debugprinters');
+const e = require('express');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -68,4 +69,37 @@ router.post('/register', (req, res, next)=>{
   });
 })
 
+
+router.post('/login', (req, res, next)=>{
+  let username = req.body.username;
+  let password = req.body.password;
+
+  /**
+   * Do server validation here
+   */
+
+  let baseSQL = "SELECT username, password FROM users WHERE username =? AND password=?;"
+  db.execute(baseSQL, [username, password])
+  .then(([results, fields]) => {
+    if(results && results.length == 1){
+      successPrint(`User ${username} is logged in`)
+      //res.cookie("logged", username, {expires: new Date(Date.now() + 900000), httpOnly: false});
+      res.locals.logged = true;
+      res.render('home');
+    }else{
+      throw new UserError("Invalid username and password", "/login", 200);
+    }
+  })
+  .catch((err)=>{
+    errorPrint("User login failed");
+    if(err instanceof UserError){
+      errorPrint(err.getMessage());
+      res.status(err.getStatus());
+      res.redirect('/login')
+    }else{
+      next(err);
+    }
+  })
+
+})
 module.exports = router;
