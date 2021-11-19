@@ -3,7 +3,8 @@ var router = express.Router();
 var db = require('../conf/database')
 const UserError = require("../helpers/error/UserError");
 const { requestPrint, errorPrint, successPrint} = require('../helpers/debug/debugprinters');
-const e = require('express');
+var bcrypt = require('bcrypt');                                                                                                                 
+//const e = require('express');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -35,8 +36,7 @@ router.post('/register', (req, res, next)=>{
   })
   .then(([results, fields])=>{
     if(results && results.length == 0){
-      let baseSQL = "INSERT INTO users (username, email, password, createdAt) VALUES (?,?,?,now());";
-      return db.execute(baseSQL, [username, email, password])
+      return bcrypt.hash(password, 15);
     }else{
       throw new UserError(
         "Registration Failed: Email already exists",
@@ -44,6 +44,18 @@ router.post('/register', (req, res, next)=>{
         200
       );
     }
+  })
+  .then((hashedPassword)=>{
+    //if(results && results.length == 0){
+      let baseSQL = "INSERT INTO users (username, email, password, createdAt) VALUES (?,?,?,now());";
+      return db.execute(baseSQL, [username, email, hashedPassword])
+    // }else{
+    //   throw new UserError(
+    //     "Registration Failed: Email already exists",
+    //     "registration",
+    //     200
+    //   );
+    // }
   })
   .then(([results, fields])=> {
     if(results && results.affectedRows){
@@ -78,12 +90,19 @@ router.post('/login', (req, res, next)=>{
    * Do server validation here
    */
 
-  let baseSQL = "SELECT username, password FROM users WHERE username =? AND password=?;"
-  db.execute(baseSQL, [username, password])
+  let baseSQL = "SELECT username, password FROM users WHERE username =?;"
+  db.execute(baseSQL, [username])
   .then(([results, fields]) => {
     if(results && results.length == 1){
+      let hashedPassword = results[0].password;
+      return bcrypt.compare(password, hashedPassword);
+    }else{
+      throw new UserError("invalid username and password", "/login", 200);
+    }
+  })
+  .then((passwordsMatched)=>{
+    if(passwordsMatched){
       successPrint(`User ${username} is logged in`)
-      //res.cookie("logged", username, {expires: new Date(Date.now() + 900000), httpOnly: false});
       res.locals.logged = true;
       res.render('home');
     }else{
@@ -103,3 +122,5 @@ router.post('/login', (req, res, next)=>{
 
 })
 module.exports = router;
+
+
