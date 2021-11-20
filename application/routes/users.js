@@ -7,9 +7,9 @@ var bcrypt = require('bcrypt');
 //const e = require('express');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
 
 router.post('/register', (req, res, next)=>{
   // console.log(req.body);
@@ -60,6 +60,7 @@ router.post('/register', (req, res, next)=>{
   .then(([results, fields])=> {
     if(results && results.affectedRows){
       successPrint("User.js --> User was created!");
+      req.flash('success', 'User account has been made!');
       res.redirect('/login');
     }else{
       throw new UserError(
@@ -73,6 +74,7 @@ router.post('/register', (req, res, next)=>{
     errorPrint("User could not  be made", err);
     if(err instanceof UserError){
        errorPrint(err.getMessage());
+       req.flash('error', err.getMessage());
        res.status(err.getStatus());
        res.redirect(err.getRedirectURL());
     }else{
@@ -107,15 +109,17 @@ router.post('/login', (req, res, next)=>{
       successPrint(`User ${username} is logged in`)
       req.session.username = username;
       req.session.userId = userId;
+      req.flash('success', 'You have been successfully logged in!');
       res.redirect('/home');
     }else{
-      throw new UserError("Invalid username and password", "/login", 200);
+      throw new UserError("Invalid username or password", "/login", 200);
     }
   })
   .catch((err)=>{
     errorPrint("User login failed");
     if(err instanceof UserError){
       errorPrint(err.getMessage());
+      req.flash('error', err.getMessage());
       res.status(err.getStatus());
       res.redirect('/login')
     }else{

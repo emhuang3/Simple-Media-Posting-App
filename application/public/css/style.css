@@ -42,3 +42,21 @@ body{
 h1,p{
   text-align: center;
 }
+
+#flash-message{
+ 
+  height: 25px;
+  width: 300px;
+  border-radius: 3px;
+  background-color:#f5a021;
+  ;
+  color: #000A90;
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%,0);
+}
+
+#flash-message > div{
+  text-align: center;
+}
