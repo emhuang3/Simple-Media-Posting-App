@@ -1,12 +1,17 @@
 <nav id = "nav-bar">
-    <a href = "/home">Home</a> |
-    {{#if logged}}
-    <a href = "/user/logut">Log Out</a> 
-    {{else}}
-    <a href = "/login">Login</a> 
-    {{/if}}
+    <a href = "/home">Home</a> 
     |
-    <a href = "/registration">Registration</a> |
-    <a href = "/postimage">Post Image</a> |
-    <a href = "/viewpost">View Post</a> 
+    <a href = "/postimage">Post Image</a>
+    |
+    <a href = "/viewpost">View Post</a>
+    |
+    <a href = "/registration">Registration</a> 
+    |
+    {{#if logged}}
+    <a id ="login-button">Log Out</a> 
+    {{!-- <a href = "/users/logout" id ="login-button">Log Out</a>  --}}
+    {{else}}
+    <a href = "/login" id ="login-button">Login</a> 
+    {{/if}}
+     
 </nav>

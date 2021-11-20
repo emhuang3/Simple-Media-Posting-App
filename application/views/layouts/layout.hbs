@@ -11,5 +11,21 @@
     {{> nav}}
     {{{body}}}
     {{> footer}}
+
+    {{#if logged}}
+      <script>
+        let ele = document.getElementById('login-button');
+        if (ele){
+          ele.onclick = (even) =>{
+            fetch('/users/logout', {
+              method: "POST"
+            })
+            .then((data)=>{
+              location.replace('/home');
+            })
+          }
+        }
+      </script>
+    {{/if}}
   </body>
 </html>
