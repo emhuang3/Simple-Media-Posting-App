@@ -180,6 +180,17 @@ button:hover{
    
 }
 
+#email-input-failure{
+ 
+    background-color: #f5a021; 
+    width: 250px;
+    border-radius: 35px;
+    text-align: center;
+    padding: 15px;
+    visibility: hidden;
+   
+}
+
 .checkbox{
     
     margin-left: 570px;
@@ -188,7 +199,7 @@ button:hover{
     
 }
 
-#error{
+#divError{
     padding: 0px 0px 0px 20px;
     display: inline-block;
    

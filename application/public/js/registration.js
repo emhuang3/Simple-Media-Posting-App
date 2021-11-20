@@ -4,6 +4,7 @@ const form = document.getElementById("registration-form");
 form.addEventListener("submit", (e)=>{
     
     usernameReq();
+    emailReq();
     passwordReq();
 
     if(usernameReq() == false || passwordReq() == false){
@@ -23,6 +24,19 @@ function usernameReq(){
     }
     else{
         document.getElementById("username-input-failure").style.visibility = "visible";
+        return false;
+    }
+    return true;
+
+}
+
+function emailReq(){
+    var email = document.getElementById("email-content").value;
+    if(/@/.test(email)){
+        document.getElementById("email-input-failure").style.visibility = "hidden";
+    }
+    else{
+        document.getElementById("email-input-failure").style.visibility = "visible";
         return false;
     }
     return true;

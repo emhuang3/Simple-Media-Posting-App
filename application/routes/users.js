@@ -3,7 +3,8 @@ var router = express.Router();
 var db = require('../conf/database')
 const UserError = require("../helpers/error/UserError");
 const { requestPrint, errorPrint, successPrint} = require('../helpers/debug/debugprinters');
-var bcrypt = require('bcrypt');                                                                                                                 
+var bcrypt = require('bcrypt');      
+const {registerValidator, loginValidator} = require('../middleware/validation');                                                                                                           
 //const e = require('express');
 
 /* GET users listing. */
@@ -11,7 +12,8 @@ var bcrypt = require('bcrypt');
 //   res.send('respond with a resource');
 // });
 
-router.post('/register', (req, res, next)=>{
+//router.use('/register', registerValidator);
+router.post('/register', registerValidator, (req, res, next)=>{
   // console.log(req.body);
   // res.send('data');
   let username = req.body.username;
@@ -21,6 +23,11 @@ router.post('/register', (req, res, next)=>{
   /*
     Do server side validation
   */
+
+  // res.json({
+  //   message: "Valid user"
+  // });
+
   db.execute("SELECT * FROM users WHERE username=?", [username])
   .then(([results, fields]) => {
     if(results && results.length == 0){
@@ -84,13 +91,18 @@ router.post('/register', (req, res, next)=>{
 })
 
 
-router.post('/login', (req, res, next)=>{
+router.post('/login', loginValidator, (req, res, next)=>{
   let username = req.body.username;
   let password = req.body.password;
 
   /**
    * Do server validation here
    */
+
+  //  res.json({
+  //   message: "Valid login"
+  // });
+
 
   let baseSQL = "SELECT id, username, password FROM users WHERE username =?;"
   let userId;
@@ -101,7 +113,7 @@ router.post('/login', (req, res, next)=>{
       userId = results[0].id;
       return bcrypt.compare(password, hashedPassword);
     }else{
-      throw new UserError("invalid username and password", "/login", 200);
+      throw new UserError("invalid username or password", "/login", 200);
     }
   })
   .then((passwordsMatched)=>{

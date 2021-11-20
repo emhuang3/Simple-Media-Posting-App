@@ -16,7 +16,7 @@
      
 
             <label class = "email">Email: </label>
-            <input type = "email" class = "email-content" name = "email" required/>
+            <input type = "email" id = "email-content"class = "email-content" name = "email"/>
 
             <label class = "password">Password: </label>
             <input type = "password" class = "password-content" id = "password" name = "password" required/>
@@ -27,10 +27,14 @@
           
 
         </div>
-        <div id = "error">
+        <div id = "divError">
             <div  id = "username-input-failure">
             Username must begin with a alphabetic character.
             Username must be 3 or more characters.
+            </div>
+            <br/>
+            <div  id = "email-input-failure">
+            Email must contain the @ symbol.
             </div>
             <br/>
             <div  id = "password-input-failure">
