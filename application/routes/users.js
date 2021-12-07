@@ -122,7 +122,7 @@ router.post('/login', loginValidator, (req, res, next)=>{
       req.session.username = username;
       req.session.userId = userId;
       req.flash('success', 'You have been successfully logged in!');
-      res.redirect('/home');
+      res.redirect('/');
     }else{
       throw new UserError("Invalid username or password", "/login", 200);
     }

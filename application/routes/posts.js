@@ -48,9 +48,9 @@ router.post('/createPost', uploader.single("uploadImage"), (req, res, next)=>{
         if(results&& results.affectedRows){
             req.flash('success', "Your post was created successfully!");
             //res.redirect('/home');
-            res.json({status: "OK", message: "post was created", "redirect": "/home"});
+            res.json({status: "OK", message: "post was created", "redirect": "/"});
         }else{
-            res.json({status: "OK", message: "post was created", "redirect": "/home"});
+            res.json({status: "OK", message: "post was created", "redirect": "/"});
             //throw new PostError('Post could not be created!!', 'postImage', 200);
         }
     })

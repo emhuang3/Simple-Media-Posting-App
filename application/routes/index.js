@@ -4,7 +4,8 @@ var isLoggedIn = require('../middleware/routeprotecters').userIsLoggedIn;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CSC 317 App', name:"Emily Huang" });
+  // res.render('index', { title: 'CSC 317 App', name:"Emily Huang" });
+  res.render('index');
 });
 
 router.get('/login', (req, res, next)=>{
