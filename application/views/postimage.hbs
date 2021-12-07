@@ -1,12 +1,13 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/postimage.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     
 
-    <form method = "POST" enctype="multipart/form-data" action = '/posts/createPost'>
+    <form id = "post-image" method = "POST" enctype="multipart/form-data" >
+    <!-- action = '/posts/createPost'-->
         <div id = "post-image-container">
             <header class = "post-image-header">
             Post an Image
@@ -38,7 +39,43 @@
             <button id = "post-image-button" type = "Submit">Submit</button>
 
         </div>
-        
+        <script>
+            const _form = document.getElementById('post-image');
+            _form.onsubmit = function(event){
+                event.preventDefault();
+                let _body  = new FormData(_form);
+
+                //fetch('/posts/createPost', {
+                //    body: _body,
+                //    method: "POST"
+                //})
+                //.then((data)=>{
+                //    console.log(data);
+                //    return data.json();
+                //})
+                //.then((dataAsObject)=>{
+                //    console.log(dataAsObject);
+                //    alert(dataAsObject.message);
+                //    location.replace(dataAsObject.redirect); 
+                //})
+                //.catch(err => console.log(err));
+
+
+
+                axios('/posts/createPost', {
+                    data: _body,
+                    method: "POST"
+                })
+                .then((data)=>{
+                    console.log(data.data);
+                    alert(data.data.message);
+                    location.replace(data.data.redirect); 
+                })
+                .catch(err => console.log(err));
+                
+            }
+
+        </script>
 
     </form>
 </body>
