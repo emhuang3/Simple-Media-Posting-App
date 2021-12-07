@@ -1,7 +1,7 @@
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/public/css/home.css">
-    <script defer type = "text/javascript" src = "/public/js/home.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+    <script defer type = "text/javascript" src = "/public/js/index.js"></script>
 </head>
 <body>
     <h1 id = "items-count"> 
@@ -9,7 +9,9 @@
     </h1>
     
     <div id = "container"> 
-       
+       {{#each results}}
+            {{> card this}}
+       {{/each}}
     </div>
     
 </body>

@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var isLoggedIn = require('../middleware/routeprotecters').userIsLoggedIn;
+var getRecentPosts = require('../middleware/postsmiddleware').getRecentPosts;
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', getRecentPosts, function(req, res, next) {
   // res.render('index', { title: 'CSC 317 App', name:"Emily Huang" });
   res.render('index');
 });
