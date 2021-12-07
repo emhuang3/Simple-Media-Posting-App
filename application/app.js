@@ -7,6 +7,7 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const postsRouter = require("./routes/posts");
 const app = express();
 var sessions = require('express-session');
 var mysqlSession = require('express-mysql-session')(sessions);
@@ -77,7 +78,7 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
-
+app.use("/posts", postsRouter);
 
 
 /**
