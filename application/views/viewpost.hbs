@@ -6,18 +6,37 @@
 
     
     
-    <div id = "post-box">
-        <header id = "view-post-header">View Posts</header>
+    <div id = "post-box" class = "viewpost-boxes">
+        <header id = "view-post-header">{{currentPost.title}}</header>
+        <div>
+            <img id = "view-image"src = "/{{currentPost.photopath}}"  alt = "Missing Image">
+            
+
+        </div>   
+    </div>
+
+   
+
+    <div id = "post-information">
+        <div class = "post-image-div"><strong>Title:</strong></div>
+        <p class = "user-info">{{currentPost.title}}</p>
         
-        <label class = "post-image-label"><strong>Title:</strong> Hannibal S2ep08: Su-Zakana</label>
-        <br/>
-        <label class = "post-image-label"><strong>Author:</strong> Bryan Fuller</label>
-        <br/>
-        <label class = "post-image-label"><strong>Creation Time:</strong> April 18, 2014 @1:00 pm</label>
-        <br/>
-        <label class = "post-image-label"><strong>Image:</strong></label>
-        <br/>
-        <img src = "https://www.indiewire.com/wp-content/uploads/2019/05/hannibal_will.jpg" width = "500" height = auto alt = "Hannibal and Will from TV show Hannibal">
+        <div class = "post-image-div"><strong>Author:</strong></div>
+        <p class = "user-info">{{currentPost.username}}</p>
+
+        <div class = "post-image-div"><strong>Creation Time:</strong></div>
+        <p class = "user-info">{{currentPost.createdAt}}</p>
+        
+        <div class = "post-image-div"><strong>Description:</strong></div>
+        <p class = "user-info">{{currentPost.description}}</p>
+    </div>
+
+
+     <div id = "comment-box" class = "viewpost-boxes">
+        
+
+        <header id = "view-post-header">Comments</header>
+
     </div>
     
         
