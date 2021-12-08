@@ -80,6 +80,11 @@ h1{
     height: 250px;
 }
 
+#card-info{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .card-title{
     padding-top: 10px;
     font-size: large;
@@ -91,6 +96,8 @@ h1{
     font-size: small;
     color:#ffffff;
 }
+
+
 
 .post-details{
     padding-bottom: 15px;
