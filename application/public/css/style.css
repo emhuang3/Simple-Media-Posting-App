@@ -5,12 +5,44 @@ body{
   padding: 0;
 }
 
+
+
+.links{
+  text-align: center;
+  width: 150px;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  float:left;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.links:hover{
+  /* height: 100%; */
+  background-color: #000A90;
+  color:#f5a021;
+}
+
+#search{
+  margin-right: 10px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  float:right;
+  border-radius: 20px;
+  width: 450px;
+  border-radius: 25px;
+  height: 25px;
+}
+
 #nav-bar{
   margin-bottom: 50px;
-  font-size: 20px;
+  text-decoration: none;
   line-height: 35px;
   height: 40px;
-  text-align: center;
+  /* text-align: center; */
   background:#f5a021;
   color: white;
 }

@@ -1,45 +1,4 @@
-/* body{
-    background-color: #3c44b8;
-    padding: 0;
-    margin: 0;
-    
-    
-}
 
-#nav-bar{
-    margin-bottom: 50px;
-    font-size: 20px;
-    line-height: 35px;
-    height: 40px;
-    text-align: center;
-    background:#f5a021;
-    color: white;
-}
-
-#footer{
-    position: fixed;
-    bottom:0;
-    left:0;
-    text-align: center;
-    background:#000A90;
-    width: 100%;
-    height: 30px;
-    color:#f5a021;
-   
-
-}
-
-
-#banner{
-    margin: 0px;
-    line-height: 100px;
-    text-align: center;
-    background:#000A90;
-    width: 100%;
-    height: 100px;
-    color:#f5a021;
-    font-size: 30px;
-} */
 header{
     
     font-size: 40px;
@@ -62,7 +21,7 @@ label{
 
 }
 
-input{
+.username-content, .email-content, .password-content, .password2-content{
     background-color: #f5a021;;
     border-radius: 5px;
 }

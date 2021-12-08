@@ -1,17 +1,24 @@
 <nav id = "nav-bar">
-    <a href = "/">Home</a> 
-    |
-    <a href = "/postimage">Post Image</a>
-    |
+    <span >
+     <a class = "links" href = "/">Home</a> 
+    
+    <a class = "links" href = "/postimage">Post Image</a>
+    
     {{!-- <a href = "/viewpost">View Post</a>
     | --}}
-    <a href = "/registration">Registration</a> 
-    |
+    <a class = "links" href = "/registration">Registration</a> 
+    
     {{#if logged}}
-    <a id ="login-button">Log Out</a> 
+    <a id ="login-button" class = "links">Log Out</a> 
     {{!-- <a href = "/users/logout" id ="login-button">Log Out</a>  --}}
     {{else}}
-    <a href = "/login" id ="login-button">Login</a> 
-    {{/if}}
+    <a href = "/login" id ="login-button" class = "links">Login</a> 
+    {{/if}}   
+    </span>
+    
+    <span >
+        <input id = "search" type = "text" placeholder=" Search">
+    </span>
+    
      
 </nav>
