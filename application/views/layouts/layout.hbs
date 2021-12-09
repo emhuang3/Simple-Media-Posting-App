@@ -22,7 +22,7 @@
 
     {{#if logged}}
       <script>
-        let ele = document.getElementById('login-button');
+        let ele = document.getElementById('nav-login-button');
         if (ele){
           ele.onclick = (even) =>{
             fetch('/users/logout', {
