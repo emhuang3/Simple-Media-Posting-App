@@ -1,14 +1,15 @@
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
-    <script defer type = "text/javascript" src = "/public/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/css/index.css">
+    {{!-- <script defer type = "text/javascript" src = "/public/js/index.js"></script> --}}
+    {{!-- <script defer type = "text/javascript" src = "../routes/index.js"></script> --}}
 </head>
 <body>
-    <h1 id = "items-count"> 
+    {{!-- <h1 id = "items-count"> 
 
-    </h1>
+    </h1> --}}
     
-    <div id = "container"> 
+    <div id = "main-content"> 
        {{#each results}}
             {{> card this}}
        {{/each}}

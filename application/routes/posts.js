@@ -92,13 +92,13 @@ router.get('/search', (req, res, next)=>{
                     results: results    
                 });
             }else{
-                db.query('SELECT id, title, description, thumbnail created FROM posts ORDER BY created DESC LIMIT 8', [])
+                db.query('SELECT id, title, description, thumbnail, createdAt FROM posts ORDER BY createdAt DESC LIMIT 8', [])
                 .then(([results, fields])=>{
                     res.send({
                         resultsStatus: "info",
-                        message: "No results were found for your search but here are the 8 most recent posts.",
+                        message: "No match but here are the 8 most recent posts.",
                         results: results
-                    })
+                    });
                 })
             }
         })

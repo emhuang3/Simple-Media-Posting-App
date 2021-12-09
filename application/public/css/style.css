@@ -26,16 +26,27 @@ body{
 }
 
 #search{
-  margin-right: 10px;
+  float:right;
+  margin-right: 20px;
+  
+}
+
+#search-text{
+  margin-right: 5px;
   margin-top: 4px;
   margin-bottom: 5px;
   font-size: 20px;
-  float:right;
+  /* float:right; */
   border-radius: 20px;
   width: 450px;
   border-radius: 25px;
   height: 25px;
 }
+
+#search-button{
+  color:darkblue;
+}
+
 
 #nav-bar{
   margin-bottom: 50px;
@@ -87,6 +98,7 @@ h1,p{
   left: 50%;
   top: 20%;
   transform: translate(-50%,0);
+  z-index: 9999;
 }
 
 #flash-message > div{
