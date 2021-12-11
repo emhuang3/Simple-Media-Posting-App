@@ -15,7 +15,7 @@ CommentModel.create = (userId, postId, comment) =>{
 }
 
 CommentModel.getCommentsForPost = (postId) =>{
-    let baseSQL = `SELECT u.username, c.comment, c.created, c.id
+    let baseSQL = `SELECT u.username, c.comment, c.createdAt, c.id
     FROM comments c
     JOIN users u
     on u.id = fk_authorId
