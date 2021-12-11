@@ -1,6 +1,8 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/viewpost.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 
@@ -18,8 +20,8 @@
    
 
     <div id = "post-information">
-        <div class = "post-image-div"><strong>Title:</strong></div>
-        <p class = "user-info">{{currentPost.title}}</p>
+        {{!-- <div class = "post-image-div"><strong>Title:</strong></div>
+        <p class = "user-info">{{currentPost.title}}</p> --}}
         
         <div class = "post-image-div"><strong>Author:</strong></div>
         <p class = "user-info">{{currentPost.username}}</p>
@@ -35,11 +37,72 @@
      <div id = "comment-box" class = "viewpost-boxes">
         
         <header id = "view-post-header">Comments</header>
-        <div id = "message-box">{{log this}}</div>
+        <div id = "messages">
+            {{#each currentPost.comments}}
+                {{> comment this}}
+            {{/each}}
+
+        </div>
+
+        <div id = "comment-section">
+            
+            <textarea id = "comment-here"placeholder="Comment Here."></textarea>
+            <i id ="comment-button" class = "fas fa-comment" style = "font-size: 45px;"></i>
+            
+            
+        </div>
 
     </div>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', (event)=>{
+            document.querySelectorAll('span[class=date-posted]').forEach((postedDate)=>{
+                postedDate.textContent = new Date(postedDate.textContent).toLocaleString();
+            });
+        });
+
+        function addMessage(data){
+            let template = document.createElement('template');
+            template.innerHTML = `<div id="message-${data.commentId}">
+                <strong class="author-text">@${data.username}</strong>
+                <span class="date-posted">${new Date().toLocaleString()}</span>
+                <div class="comment-text">${data.comment}</div>`;
+            
+            document.getElementById('messages').firstChild.before(template.content.firstChild);
+            
+        }
+
+        document.getElementById('comment-button').onclick = (event) =>{
+            let commentText = document.getElementById('comment-here').value;
+            let postId = document.location.pathname.match(/\d+/g).map(Number)[0];
+
+            if(!commentText){
+                return;
+            }
+
+            let fetchOptions = {
+                method: "POST",
+                headers:{
+                    "Content-Type":"Application/json"
+                },
+                body: JSON.stringify({
+                    comment: commentText,
+                    postId, postId
+                })
+            }
+                fetch('/comments/create', fetchOptions)
+                .then((response)=>response.json())
+                .then((data)=>{
+                    if(data.code == 1){
+                        addMessage(data);
+                    }else{
+                        addFlashFromFrontEnd(data.message, data.status);
+                    }
+                })
+                .catch((err)=> console.log(err));
+        }
         
+    </script>
     
     
 </body>
