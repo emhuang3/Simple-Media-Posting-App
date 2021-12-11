@@ -4,13 +4,11 @@
     
     <a class = "links" href = "/postimage">Post Image</a>
     
-    {{!-- <a href = "/viewpost">View Post</a>
-    | --}}
+ 
     <a class = "links" href = "/registration">Registration</a> 
     
     {{#if logged}}
     <a id ="nav-login-button" class = "links">Log Out</a> 
-    {{!-- <a href = "/users/logout" id ="login-button">Log Out</a>  --}}
     {{else}}
     <a href = "/login" id ="nav-login-button" class = "links">Login</a> 
     {{/if}}   
@@ -19,7 +17,6 @@
     <span id = "search">
         <input id = "search-text" type = "text" placeholder="  Search">
         <i id = "search-button" class = "fa fa-search" style = "font-size: 23px;"></i>
-        {{!-- <button id = "search-button" type = "button" class = "fa fa-search" style = "font-size: 23px;"></button> --}}
     </span>
     
      

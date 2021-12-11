@@ -1,5 +1,4 @@
 body{
-    /* text-align: center; */
     background-color: #b83c3c;
     margin: 0;
     padding: 0;
@@ -21,9 +20,7 @@ body{
 
 div{
     opacity: 1;
-    /* transition: opacity 0.3 ease-in-out; */
     display: grid;
-    /* grid-template-rows: 2fr, 1fr; */
     border-color: black;
     
 }
@@ -34,16 +31,13 @@ h1{
 
 .card{
     text-align: center;
-    /* background-color: #7ebdce; */
     background-color: black;
     
 }
 
 .card-image{
-    /* margin-top: 30px; */
     margin-left: auto;
     margin-right: auto;
-    /* width: 200px; */
     width: 100%;
     height: 250px;
 }
@@ -56,7 +50,7 @@ h1{
 .card-title{
     padding-top: 10px;
     font-size: large;
-    color: #7ebdce;
+    color: #6eaec0;
     
 }
 
@@ -69,6 +63,5 @@ h1{
 
 .post-details{
     padding-bottom: 15px;
-    /* text-decoration: none; */
-    color: #7ebdce;
+    color: #6eaec0;
 }

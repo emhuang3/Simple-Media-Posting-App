@@ -1,5 +1,3 @@
-//const { search } = require("../../routes");
-
 function setFlashMessageFadeOut(flashMessageElement){
     setTimeout(()=>{
         let currentOpacity = 1.0;
