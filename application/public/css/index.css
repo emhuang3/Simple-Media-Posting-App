@@ -1,6 +1,6 @@
 body{
     /* text-align: center; */
-    background-color: #3c44b8;
+    background-color: #b83c3c;
     margin: 0;
     padding: 0;
 }
@@ -34,7 +34,8 @@ h1{
 
 .card{
     text-align: center;
-    background-color: #000A90;
+    /* background-color: #7ebdce; */
+    background-color: black;
     
 }
 
@@ -55,7 +56,7 @@ h1{
 .card-title{
     padding-top: 10px;
     font-size: large;
-    color: #f5a021;
+    color: #7ebdce;
     
 }
 
@@ -68,4 +69,6 @@ h1{
 
 .post-details{
     padding-bottom: 15px;
+    /* text-decoration: none; */
+    color: #7ebdce;
 }

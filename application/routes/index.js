@@ -18,9 +18,6 @@ router.get('/registration', (req, res, next)=>{
   res.render('registration');
 })
 
-router.get('/home', (req, res, next)=>{
-  res.render('home');
-})
 
 router.get('/viewpost', (req, res, next)=>{
   res.render('viewpost');
